@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE mapping PUBLIC "-//EXOLAB/Castor Mapping DTD Version 1.0//EN" "http://castor.org/mapping.dtd">
+        
+<mapping xmlns:topografix="http://www.topografix.com/GPX/Private/TopoGrafix/0/1">
+
+	<class name="it.inserpio.mapillary.gopro.importer.parser.bikematepro.bean.BikeMateProGPX">
+		<map-to xml="gpx" ns-uri="http://www.topografix.com/GPX/1/0" />
+ 
+		<field name="name"   type="string"><bind-xml name="name" node="element" /></field>
+		<field name="desc"   type="string"><bind-xml name="desc" node="element" /></field>
+		<field name="author" type="string"><bind-xml name="author" node="element" /></field>
+		<field name="time"   type="string"><bind-xml name="time" node="element" /></field>
+		<field name="bounds" type="string"><bind-xml name="bounds" node="element" /></field>
+		<field name="trk"    type="it.inserpio.mapillary.gopro.importer.parser.bikematepro.bean.BikeMateProTRK"><bind-xml name="trk" node="element" /></field>
+	</class>
+
+	<class name="it.inserpio.mapillary.gopro.importer.parser.bikematepro.bean.BikeMateProTRK">
+		<map-to xml="trk" ns-uri="http://www.topografix.com/GPX/1/0" />
+
+		<field name="name"   type="string"><bind-xml name="name" node="element" /></field>
+		<field name="trksegs" type="it.inserpio.mapillary.gopro.importer.parser.bikematepro.bean.BikeMateProTRKSEG" collection="arraylist"><bind-xml name="trkseg" node="element" /></field>
+	</class>
+
+	<class name="it.inserpio.mapillary.gopro.importer.parser.bikematepro.bean.BikeMateProTRKSEG">
+		<map-to xml="trkseg" ns-uri="http://www.topografix.com/GPX/1/0" />
+
+		<field name="trkpts" type="it.inserpio.mapillary.gopro.importer.parser.bikematepro.bean.BikeMateProTRKPT" collection="arraylist"><bind-xml name="trkpt" node="element" /></field>
+	</class>
+
+	<class name="it.inserpio.mapillary.gopro.importer.parser.bikematepro.bean.BikeMateProTRKPT">
+		<map-to xml="trkpt" ns-uri="http://www.topografix.com/GPX/1/0" />
+
+		<field name="lat"    type="double"><bind-xml name="lat"    node="attribute" /></field>
+		<field name="lon"    type="double"><bind-xml name="lon"    node="attribute" /></field>
+		<field name="ele"    type="string"><bind-xml name="ele"    node="element" /></field>
+		<field name="magvar" type="string"><bind-xml name="magvar" node="element" /></field>
+		<field name="hdop"   type="string"><bind-xml name="hdop"   node="element" /></field>
+		<field name="vdop"   type="string"><bind-xml name="vdop"   node="element" /></field>
+		<field name="time"   type="string"><bind-xml name="time"   node="element" /></field>
+	</class>
+
+</mapping>
